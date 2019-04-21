@@ -4,17 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -r esm ./src/index.js"
+    "start": "nodemon --exec babel-node ./src/index.js",
+    "test": "mocha --recursive  \"./src/test/*.spec.js\"  --require @babel/register "
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "esm": "^3.2.22",
-    "lodash": "^4.17.11",
-    "nodemon": "^1.18.11"
+    "esm": "3.2.14",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
-    "jest": "^24.7.1"
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.18.11"
   }
 }
