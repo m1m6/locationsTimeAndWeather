@@ -1,8 +1,8 @@
 import * as CONSTANTS from "./constants"
-import { doGet } from "./HttpMethods"
+import { doGet } from "./httpMethods"
 import { getEndpoint } from "./utils"
 
-const fetchLocations = (locations) => {
+export const fetchLocations = (locations) => {
     locations.forEach(async (location) => {
         try{
             const locationEndpointUrl = getEndpoint(CONSTANTS.ENDPOINTS.weather, location, CONSTANTS.API_FORMAT.JSON)
