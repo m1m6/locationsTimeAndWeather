@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node ./src/index.js",
-    "test": "mocha --recursive  \"./src/test/*.spec.js\"  --require @babel/register "
+    "start": "cross-env NODE_ENV=local nodemon --exec babel-node ./src/index.js",
+    "test": "cross-env NODE_ENV=test mocha --recursive  \"./src/test/*.spec.js\"  --require @babel/register "
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/register": "^7.4.0",
     "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
     "mocha": "^6.1.4",
     "nock": "^10.0.6",
     "nodemon": "^1.18.11"
