@@ -2,13 +2,6 @@ import * as CONSTANTS from "./constants"
 import { doGetRequest } from "./httpMethods"
 import { getEndpoint, checkResponseStatusIsOk } from "./utils"
 
-console.log("NODE_ENV", process.env.NODE_ENV)
-
-if (!process.env.NODE_ENV.includes("test")) {
-  fetchLocationsWeather(["New york", "10005", "Tokyo", "São Paulo", "Pluto"])
-  fetchLocationsTimezone(["New york", "10005", "Tokyo", "São Paulo", "Pluto"])
-}
-
 export const fetchLocationsWeather = locations => {
   locations.forEach(async location => {
     try {
@@ -54,4 +47,11 @@ export const fetchLocationsTimezone = locations => {
       console.error(e)
     }
   })
+}
+
+console.log("NODE_ENV", process.env.NODE_ENV)
+
+if (!process.env.NODE_ENV.includes("test")) {
+  fetchLocationsWeather(["New york", "10005", "Tokyo", "São Paulo", "Pluto"])
+  fetchLocationsTimezone(["New york", "10005", "Tokyo", "São Paulo", "Pluto"])
 }
