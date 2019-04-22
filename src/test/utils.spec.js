@@ -6,12 +6,12 @@ describe('[Endpoints Utils]', () => {
     describe('[getBaseEndpoint]', function () {
         it('should generate the base endpoint url for weather endpoint', () => {
             expect(utils.getBaseEndpoint(CONSTANTS.ENDPOINTS.weather))
-            .to.eql('http://api.worldweatheronline.com/premium/v1/weather.ashx')
+            .to.eql('https://api.worldweatheronline.com/premium/v1/weather.ashx')
         })
     
         it('should generate the base endpoint url for timezone endpoint', () => {
             expect(utils.getBaseEndpoint(CONSTANTS.ENDPOINTS.timezone))
-            .to.eql('http://api.worldweatheronline.com/premium/v1/tz.ashx')
+            .to.eql('https://api.worldweatheronline.com/premium/v1/tz.ashx')
         })
     
         it(`it should throw an error with value (please provide valid endpoint)
@@ -30,12 +30,12 @@ describe('[Endpoints Utils]', () => {
     describe('[getEndpointWithApiKey]', function () {
         it('should generate the url with api key for weather endpoint', () => {
             expect(utils.getEndpointWithApiKey(CONSTANTS.ENDPOINTS.weather))
-            .to.eql('http://api.worldweatheronline.com/premium/v1/weather.ashx?key=aba319dbee4d4d34901121516191904')
+            .to.eql('https://api.worldweatheronline.com/premium/v1/weather.ashx?key=aba319dbee4d4d34901121516191904')
         })
 
         it('should generate the url with api key for timezone endpoint', () => {
             expect(utils.getEndpointWithApiKey(CONSTANTS.ENDPOINTS.timezone))
-            .to.eql('http://api.worldweatheronline.com/premium/v1/tz.ashx?key=aba319dbee4d4d34901121516191904')
+            .to.eql('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=aba319dbee4d4d34901121516191904')
         })
 
         it(`it should throw an error with value (please provide valid endpoint)
@@ -54,12 +54,12 @@ describe('[Endpoints Utils]', () => {
     describe('[getEndpoint]', function () {
         it('should generate the complete url weather endpoint with valid query and format', () => {
             expect(utils.getEndpoint(CONSTANTS.ENDPOINTS.weather, "New York", CONSTANTS.API_FORMAT.JSON))
-            .to.eql('http://api.worldweatheronline.com/premium/v1/weather.ashx?key=aba319dbee4d4d34901121516191904&q=New%20York&format=json')
+            .to.eql('https://api.worldweatheronline.com/premium/v1/weather.ashx?key=aba319dbee4d4d34901121516191904&q=New%20York&format=json')
         })
 
         it('should generate the complete url timezone endpoint with valid query and format', () => {
             expect(utils.getEndpoint(CONSTANTS.ENDPOINTS.timezone, "New York", CONSTANTS.API_FORMAT.XML))
-            .to.eql('http://api.worldweatheronline.com/premium/v1/tz.ashx?key=aba319dbee4d4d34901121516191904&q=New%20York&format=xml')
+            .to.eql('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=aba319dbee4d4d34901121516191904&q=New%20York&format=xml')
         })
 
         it(`it should throw an error with value (please provide valid query)
