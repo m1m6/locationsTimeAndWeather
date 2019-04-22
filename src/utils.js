@@ -24,3 +24,7 @@ export const getEndpoint = (requestedApi, query, format) => {
     }
     return `${getEndpointWithApiKey(requestedApi)}&q=${encodeURI(query)}&format=${format}`
 }
+
+export const checkResponseStatusIsOk = (response) => {
+    return response.status === CONSTANTS.HTTP_STATUS.OK
+}
